@@ -1,0 +1,55 @@
+#region IMPORT
+
+from turtle import Turtle, Screen
+import time
+
+#endregion 
+
+#region INIT
+
+screen = Screen()
+
+#endregion
+
+class StartIn(Turtle):
+
+    """<DOC
+
+        Represents the countdown before the game starts.
+
+            METHODS:
+                        -__init__ -> None
+                        -start -> None
+
+    DOC?>"""
+
+    def __init__(self):
+
+        """<DOC
+
+            Initialize the StartIn object.
+
+        DOC?>"""
+
+        super().__init__()
+        self.hideturtle()
+        self.penup()
+        self.color("white")
+        for back in range(3, 0, -1):
+            self.write(f"Game starts in {back}", False, "center", ("Showcard Gothic", 70, "normal"))
+            time.sleep(1)
+            self.clear()
+
+    def start(self):
+        
+        """<DOC
+
+            Displays 'PLAY!' after the countdown and updates the screen.
+
+        DOC?>"""
+
+        time.sleep(1)
+        self.write(f"PLAY!", False, "center", ("Showcard Gothic", 70, "normal"))
+        screen.update()
+        time.sleep(1)
+        self.clear()
